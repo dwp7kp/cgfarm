@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# GoogleAuth
+htdocs/cs4640/cgfarm/vendor
