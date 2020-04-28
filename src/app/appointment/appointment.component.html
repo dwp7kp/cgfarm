@@ -1,0 +1,94 @@
+<!-- 
+    File created by Daniel Prohaska
+-->
+
+<header>
+    <link rel="stylesheet" type="text/css" href="appointment.component.css">
+</header>
+
+<body [hidden]="hide_split" style="height: 84.9%">
+    <div class="split" id="split">
+        <div class="half" data-order="New Order" (click)="changeView('create')"></div>
+        <div class="half" data-order="Modify Order" (click)="changeView('modify')"></div>
+    </div>
+</body>
+
+<body stlye="height:100%">
+    <!-- Bootstrap Spacing API: https://getbootstrap.com/docs/4.0/utilities/spacing/ -->
+    <!-- Bootstrap Card API: https://getbootstrap.com/docs/4.0/components/card/ -->
+    <div [hidden]="hide_container" class="container" id="create">
+
+        <form name="mainform">
+            <div class="form-group">
+                <br>
+                <input type="text" [(ngModel)]="input_email" name="email_input" class="form-control" placeholder="Enter account email here" />
+            </div>
+        </form>
+        <div class="card bg-white border-white head-head">
+            <div class="card-body">
+                <h5 class="card-title">Filters</h5>
+
+
+                <!-- MDB Filter API (when angular is working) https://mdbootstrap.com/plugins/jquery/filter/ -->
+                <div>
+                    <button class="btn btn-primary mr-2" (click)="show_beef = true; show_pork = true;">All</button>
+                    <button class="btn btn-primary mr-2" (click)="show_pork = !show_pork">Pork</button>
+                    <button class="btn btn-primary mr-2" (click)="show_beef = !show_beef">Beef</button>
+                    
+
+
+                    <!-- MDB Slider API (when angular is working) https://mdbootstrap.com/docs/jquery/forms/slider/ -->
+                </div>
+
+                <!--
+                <div class="mt-3">
+                    <span class="font-weight-bold purple-text mr-2 mt-1">$1</span>
+                    <input class="border-0" type="range" min="1" max="100" id="price-slider" />
+                    <span class="font-weight-bold purple-text ml-2 mt-1">$100</span>
+                    <br>
+                    <b id="price-shower">Price: $50</b>
+                </div>
+                -->
+
+            </div>
+        </div>
+
+        <div class="card-deck mt-4">
+            <div *ngFor="let i of items">
+                <span *ngIf="(i.type == 'pork' && show_pork) || (i.type == 'beef' && show_beef) || (i.type == 'fruit')">
+                    <div [ngClass]="['card', 'bg-info', 'short-hair', 'mb-3']" [ngStyle]="{width: '21rem'}">
+                        <div class="card-header">{{ i.type }}</div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ i.name }}</h5>
+                            <p class="card-text">{{ i.description }} </p>
+                            <a class="btn btn-primary" (click)="addToCart(i.name, i.price)">Add to cart</a>
+                            <b class="price-price ml-5">${{ i.price }}</b>
+                        </div>
+
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+<!--
+             Footer
+            <footer class="page-footer font-small unique-color-dark pt-4">
+
+                <div class="container">
+                    <ul class="list-unstyled list-inline text-center">
+                        Contact us at email@virginia.edu
+        
+                    </ul>
+        
+                </div>
+        
+                Footer Elements
+        
+                <div class="footer-copyright text-center py-3">
+                    <a href="http://www.cs.virginia.edu/~up3f/cs4640/syllabus.html">CS 4640:</a>
+                    Daniel Prohaska
+                </div>
+            </footer>
+        -->
+<router-outlet></router-outlet>

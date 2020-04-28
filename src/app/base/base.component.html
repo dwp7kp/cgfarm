@@ -1,0 +1,107 @@
+<header>
+    <style>
+        body {
+            background-color: #37474F;
+            
+        }
+    </style>
+</header>
+
+<body>
+    <!-- https://mdbootstrap.com/docs/angular/advanced/carousel/ -->
+    <mdb-carousel class="ml-3 mr-3 carousel slide carousel-fade" [animation]="'fade'">
+        <mdb-carousel-item>
+            <div class="view w-100">
+                <img class="d-block w-100" src="../../assets/tractor-resized.jpg"
+                    alt="First slide">
+                <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Light mask</h3>
+                <p>First text</p>
+            </div>
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+            <div class="view w-100">
+                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+                    alt="Second slide">
+                <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Strong mask</h3>
+                <p>Secondary text</p>
+            </div>
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+            <div class="view w-100">
+                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+                    alt="Third slide">
+                <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Slight mask</h3>
+                <p>Third text</p>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+
+    <mdb-carousel class="container carousel slide carousel-fade" [animation]="'fade'">
+        <mdb-carousel-item>
+            <div class="view w-100">
+                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                    alt="First slide">
+                <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Light mask</h3>
+                <p>First text</p>
+            </div>
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+            <div class="view w-100">
+                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+                    alt="Second slide">
+                <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Strong mask</h3>
+                <p>Secondary text</p>
+            </div>
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+            <div class="view w-100">
+                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+                    alt="Third slide">
+                <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Slight mask</h3>
+                <p>Third text</p>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark pt-4">
+
+        <div class="container">
+            <ul class="list-unstyled list-inline text-center">
+                Contact us at dwp7kp@virginia.edu
+
+            </ul>
+
+        </div>
+
+        <!-- Footer Elements -->
+
+        <div class="footer-copyright text-center py-3">
+            <a href="http://www.cs.virginia.edu/~up3f/cs4640/syllabus.html">CS 4640:</a>
+            Daniel Prohaska
+        </div>
+    </footer>
+
+
+
+</body>
+<router-outlet></router-outlet>
